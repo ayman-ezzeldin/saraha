@@ -2,9 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
-import Authlayout from "@/Layouts/AuthLayout/layout";
+import { Providers } from "@/components/provider/providers";
 
 
 const geistSans = Geist({
@@ -43,9 +41,9 @@ export default async function RootLayout({ children }: Props) {
           enableSystem
           disableTransitionOnChange
         >
-          <Authlayout>
+          <Providers >
             {children}
-          </Authlayout>
+          </Providers>
         </ThemeProvider>
       </body>
     </html>
