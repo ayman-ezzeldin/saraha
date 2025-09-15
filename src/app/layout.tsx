@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
+import Authlayout from "@/Layouts/AuthLayout/layout";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +43,9 @@ export default async function RootLayout({ children }: Props) {
           enableSystem
           disableTransitionOnChange
         >
+          <Authlayout>
             {children}
+          </Authlayout>
         </ThemeProvider>
       </body>
     </html>
